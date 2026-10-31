@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact | Town Talk Marketing Solutions</title>
+<meta name="description" content="Town Talk Marketing Solutions is an independent marketing consultancy helping small and mid-sized businesses make smarter marketing decisions and see what their marketing dollars achieve.">
+<meta property="og:title" content="Contact | Town Talk Marketing Solutions">
+<meta property="og:description" content="Town Talk Marketing Solutions is an independent marketing consultancy helping small and mid-sized businesses make smarter marketing decisions and see what their marketing dollars achieve.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/emblem-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Town Talk Marketing Solutions, home">
+    <img src="assets/emblem-light.png" alt="" width="256" height="224">
+    <span>Town Talk<small>Marketing Solutions</small></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="nav-cta" href="contact.html">Book a call</a></nav>
+</div></header>
+<main>
+<section class="page-hero">
+  <img class="ghost-mark" src="assets/emblem-light.png" alt="" width="256" height="224">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's talk about your marketing.</h1>
+    <p>Tell us a little about your business and we will set up a free 30-minute call. No pitch and no obligation.</p>
+  </div>
+</section>
+
+<section class="band on-paper"><div class="wrap contact-grid">
+  <div class="contact-info">
+    <div class="eyebrow">Reach us</div>
+    <dl>
+      <div><dt>Email</dt><dd><span class="placeholder">Email address to come</span></dd></div>
+      <div><dt>Phone</dt><dd><span class="placeholder">Phone number to come</span></dd></div>
+      <div><dt>Service area</dt><dd><span class="placeholder">City or region to come</span></dd></div>
+    </dl>
+    <div>
+      <div class="eyebrow" style="margin-bottom:0.75rem">What to bring</div>
+      <p style="color:var(--muted-light)">If you can, bring your last three months of marketing invoices or reports. It makes the first call far more useful.</p>
+    </div>
+  </div>
+  <form class="form" id="contact-form" novalidate>
+    <h2>Book a free consult</h2>
+    <div class="field-row">
+      <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="cf-business">Business</label><input id="cf-business" name="business" autocomplete="organization"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel"></div>
+    </div>
+    <div class="field"><label for="cf-spend">Monthly marketing spend</label>
+      <select id="cf-spend" name="spend"><option value="">Choose a range</option><option>Under $1,000</option><option>$1,000 to $5,000</option><option>$5,000 to $15,000</option><option>Over $15,000</option><option>Not sure</option></select></div>
+    <div class="field"><label for="cf-msg">What would you like help with?</label><textarea id="cf-msg" name="message"></textarea></div>
+    <div class="btn-row"><button class="btn btn-solid" type="submit">Send request</button></div>
+    <p class="form-status" id="cf-status" hidden></p>
+  </form>
+</div></section>
+
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div>
+    <img src="assets/logo-light.png" alt="Town Talk Marketing Solutions" width="290" height="163">
+    <p>Independent marketing advice for small and mid-sized businesses. Clear plans, plain answers, and a straight account of where the money goes.</p>
+  </div>
+  <div><h4>Site</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free consult</a></li><li><span class="placeholder" style="color:inherit">Email to come</span></li><li><span class="placeholder" style="color:inherit">Phone to come</span></li></ul></div>
+  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
+</div></footer>
+<script>
+(function(){
+  var f=document.getElementById('contact-form'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var s=document.getElementById('cf-status');
+    var n=f.querySelector('#cf-name'), m=f.querySelector('#cf-email');
+    if(!n.value.trim()||!m.value.trim()||!m.checkValidity()){s.textContent='Please add your name and a valid email address.';s.hidden=false;return;}
+    s.textContent='Thanks, '+n.value.trim().split(' ')[0]+'. This draft form is not connected yet, so nothing was sent. It will be wired to email before launch.';
+    s.hidden=false;
+  });
+})();
+</script>
+</body>
+</html>

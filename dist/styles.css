@@ -244,3 +244,25 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 [data-page][hidden] { display: none !important; }
 .on-paper .form .btn-solid { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 .on-paper .form .btn-solid:hover { background: transparent; color: var(--paper); }
+
+/* Founder */
+.founder { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 900px) { .founder { grid-template-columns: 5fr 7fr; } .founder-photo { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 6rem); } }
+.founder > * { min-width: 0; }
+.founder-photo { margin: 0; border: 1px solid var(--rule-dark); max-width: 30rem; }
+.founder-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.founder-copy { display: grid; gap: 1.25rem; }
+.founder-copy p { color: var(--muted-dark); }
+.founder-copy h2 { color: var(--paper); }
+.founder-copy .founder-role { margin-top: 0.5rem; font-size: var(--step--1); font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--paper-2); }
+.credential { display: flex; align-items: center; gap: 1rem; margin-top: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--rule-dark); }
+.credential img { width: 4rem; height: 4rem; flex: none; }
+.credential strong { display: block; color: var(--paper); font-size: 1.05rem; }
+.credential span { font-size: 0.85rem; color: var(--muted-dark); letter-spacing: 0.04em; }
+
+/* Contact details */
+.contact-info dd a { text-decoration: none; border-bottom: 1px solid var(--stone); }
+.contact-info dd a:hover { border-bottom-color: var(--char); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form { position: relative; }
+.form button[disabled] { opacity: 0.6; cursor: progress; }

@@ -34,9 +34,10 @@
   <div class="contact-info">
     <div class="eyebrow">Reach us</div>
     <dl>
-      <div><dt>Email</dt><dd><span class="placeholder">Email address to come</span></dd></div>
-      <div><dt>Phone</dt><dd><span class="placeholder">Phone number to come</span></dd></div>
-      <div><dt>Service area</dt><dd><span class="placeholder">City or region to come</span></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+12893384051">(289) 338-4051</a></dd></div>
+      <div><dt>Service area</dt><dd>Clients across Canada</dd></div>
+      <div><dt>Offices</dt><dd>Muskoka and Brock, Ontario</dd></div>
     </dl>
     <div>
       <div class="eyebrow" style="margin-bottom:0.75rem">What to bring</div>
@@ -44,6 +45,7 @@
     </div>
   </div>
   <form class="form" id="contact-form" novalidate>
+    <input type="checkbox" name="botcheck" id="cf-botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <h2>Book a free consult</h2>
     <div class="field-row">
       <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name" required></div>
@@ -68,19 +70,36 @@
     <p>Independent marketing advice for small and mid-sized businesses. Clear plans, plain answers, and a straight account of where the money goes.</p>
   </div>
   <div><h4>Site</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free consult</a></li><li><span class="placeholder" style="color:inherit">Email to come</span></li><li><span class="placeholder" style="color:inherit">Phone to come</span></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free consult</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
   <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
 </div></footer>
 <script>
 (function(){
+  var KEY="";
   var f=document.getElementById('contact-form'); if(!f) return;
+  var s=document.getElementById('cf-status'), btn=f.querySelector('button[type=submit]');
+  function say(t){s.textContent=t;s.hidden=false;}
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var s=document.getElementById('cf-status');
     var n=f.querySelector('#cf-name'), m=f.querySelector('#cf-email');
-    if(!n.value.trim()||!m.value.trim()||!m.checkValidity()){s.textContent='Please add your name and a valid email address.';s.hidden=false;return;}
-    s.textContent='Thanks, '+n.value.trim().split(' ')[0]+'. This draft form is not connected yet, so nothing was sent. It will be wired to email before launch.';
-    s.hidden=false;
+    if(!n.value.trim()||!m.value.trim()||!m.checkValidity()){say('Please add your name and a valid email address.');return;}
+    if(f.querySelector('#cf-botcheck').checked) return;
+    if(!KEY){say('The form is not connected yet. Please email jared@towntalk.ca or call (289) 338-4051.');return;}
+    var data=Object.fromEntries(new FormData(f).entries());
+    delete data.botcheck;
+    data.access_key=KEY;
+    data.subject='Website enquiry from '+n.value.trim()+(data.business?' ('+data.business+')':'');
+    data.from_name='Town Talk website';
+    data.replyto=m.value.trim();
+    btn.disabled=true; say('Sending...');
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j.success){var first=n.value.trim().split(' ')[0];f.reset();say('Thanks, '+first+'. Your message is on its way, and Jared will be in touch soon.');}
+        else{say('Your message did not send. Please try again, or email jared@towntalk.ca.');}
+      })
+      .catch(function(){say('Your message did not send. Check your connection and try again, or email jared@towntalk.ca.');})
+      .finally(function(){btn.disabled=false;});
   });
 })();
 </script>

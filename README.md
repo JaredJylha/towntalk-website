@@ -11,3 +11,9 @@ Static site: Home, Services, About, Contact.
 - Framework preset: None
 - Build command: (leave empty)
 - Build output directory: `dist`
+
+## Contact form
+
+The form sends through [Web3Forms](https://web3forms.com), which emails each submission to jared@towntalk.ca.
+Paste the access key into `WEB3FORMS_KEY` in `build.py` and run `python3 build.py`. Until then the form
+asks visitors to email or call instead.

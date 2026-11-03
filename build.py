@@ -44,7 +44,7 @@ FOOTER = '''<footer class="site-footer"><div class="wrap">
     <p>Independent marketing advice for small and mid-sized businesses. Clear plans, plain answers, and a straight account of where the money goes.</p>
   </div>
   <div><h4>Site</h4><ul><li><a href="{{home}}">Home</a></li><li><a href="{{services}}">Services</a></li><li><a href="{{about}}">About</a></li><li><a href="{{contact}}">Contact</a></li></ul></div>
-  <div><h4>Get in touch</h4><ul><li><a href="{{contact}}">Book a free consult</a></li><li><span class="placeholder" style="color:inherit">Email to come</span></li><li><span class="placeholder" style="color:inherit">Phone to come</span></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="{{contact}}">Book a free consult</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
   <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
 </div></footer>'''
 
@@ -204,11 +204,31 @@ ABOUT = '''<section class="page-hero">
     <p>Most business owners are pitched by a dozen media reps, platforms and agencies, each sure their channel is the answer. Few of them can say what the last campaign actually returned.</p>
     <p>Town Talk sits on your side of the table. We help you find growth opportunities, sort good proposals from bad ones, and understand where your marketing dollars are going and what they achieve.</p>
     <p>When something needs doing, we roll up our sleeves and coordinate it, so you get one accountable contact instead of five suppliers.</p>
-    <p><span class="placeholder">Founder story and photo to come</span></p>
   </div>
 </div></section>
 
-<section class="band on-paper" style="padding-top:0"><div class="wrap">
+<section class="band band-dark" id="founder"><div class="wrap founder">
+  <figure class="founder-photo">
+    <img src="assets/founder-portrait.jpg" alt="Jared Jylha, Founder and CEO of Town Talk Marketing Solutions" width="640" height="800" loading="lazy">
+  </figure>
+  <div class="founder-copy">
+    <div class="eyebrow">Meet the founder</div>
+    <div>
+      <h2>Jared Jylha</h2>
+      <p class="founder-role">Founder and CEO</p>
+    </div>
+    <p>Jared Jylha is the Founder and CEO of Town Talk Marketing, a marketing consultancy built on the belief that good marketing starts with understanding the business behind it.</p>
+    <p>With more than six years of experience in marketing and advertising, Jared has worked with businesses across a range of industries, helping them navigate digital advertising, marketing strategy, media planning, and customer acquisition. His experience managing client relationships, overseeing advertising budgets, and translating performance data into actionable insights has shaped his practical approach to marketing.</p>
+    <p>Jared founded Town Talk Marketing to make marketing and business decision-making simpler, more accessible, and more strategic. Having worked closely with businesses and their marketing teams, he recognized the need for clear advice, practical thinking, and a better understanding of where marketing efforts and budgets are best invested. His goal is to help business owners cut through the noise, understand their options, and make confident decisions about what comes next.</p>
+    <p>As a Chartered Marketer (CM), Jared combines hands-on industry experience with a commitment to continued learning. He believes effective marketing isn't about doing more for the sake of doing more. It's about asking better questions, understanding what matters, and making smarter decisions that move a business forward.</p>
+    <div class="credential">
+      <img src="assets/cm-badge.png" alt="Chartered Marketer (CM) designation badge" width="240" height="240" loading="lazy">
+      <div><strong>Chartered Marketer (CM)</strong><span>Professional marketing designation</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band on-paper"><div class="wrap">
   <div class="compare">
     <div class="yes"><h3>What Town Talk is</h3><ul>
       <li>An independent advisor on your side</li>
@@ -251,9 +271,10 @@ CONTACT = '''<section class="page-hero">
   <div class="contact-info">
     <div class="eyebrow">Reach us</div>
     <dl>
-      <div><dt>Email</dt><dd><span class="placeholder">Email address to come</span></dd></div>
-      <div><dt>Phone</dt><dd><span class="placeholder">Phone number to come</span></dd></div>
-      <div><dt>Service area</dt><dd><span class="placeholder">City or region to come</span></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+12893384051">(289) 338-4051</a></dd></div>
+      <div><dt>Service area</dt><dd>Clients across Canada</dd></div>
+      <div><dt>Offices</dt><dd>Muskoka and Brock, Ontario</dd></div>
     </dl>
     <div>
       <div class="eyebrow" style="margin-bottom:0.75rem">What to bring</div>
@@ -261,6 +282,7 @@ CONTACT = '''<section class="page-hero">
     </div>
   </div>
   <form class="form" id="contact-form" novalidate>
+    <input type="checkbox" name="botcheck" id="cf-botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <h2>Book a free consult</h2>
     <div class="field-row">
       <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name" required></div>
@@ -281,19 +303,42 @@ CONTACT = '''<section class="page-hero">
 
 BODIES = {"home": HOME, "services": SERVICES, "about": ABOUT, "contact": CONTACT}
 
-FORM_JS = '''<script>
+# Contact form delivery: Web3Forms (https://web3forms.com) emails each submission to the
+# address the access key was created for (jared@towntalk.ca). The key is public by design.
+WEB3FORMS_KEY = ""
+
+FORM_JS_TEMPLATE = '''<script>
 (function(){
+  var KEY="__WEB3FORMS_KEY__";
   var f=document.getElementById('contact-form'); if(!f) return;
+  var s=document.getElementById('cf-status'), btn=f.querySelector('button[type=submit]');
+  function say(t){s.textContent=t;s.hidden=false;}
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var s=document.getElementById('cf-status');
     var n=f.querySelector('#cf-name'), m=f.querySelector('#cf-email');
-    if(!n.value.trim()||!m.value.trim()||!m.checkValidity()){s.textContent='Please add your name and a valid email address.';s.hidden=false;return;}
-    s.textContent='Thanks, '+n.value.trim().split(' ')[0]+'. This draft form is not connected yet, so nothing was sent. It will be wired to email before launch.';
-    s.hidden=false;
+    if(!n.value.trim()||!m.value.trim()||!m.checkValidity()){say('Please add your name and a valid email address.');return;}
+    if(f.querySelector('#cf-botcheck').checked) return;
+    if(!KEY){say('The form is not connected yet. Please email jared@towntalk.ca or call (289) 338-4051.');return;}
+    var data=Object.fromEntries(new FormData(f).entries());
+    delete data.botcheck;
+    data.access_key=KEY;
+    data.subject='Website enquiry from '+n.value.trim()+(data.business?' ('+data.business+')':'');
+    data.from_name='Town Talk website';
+    data.replyto=m.value.trim();
+    btn.disabled=true; say('Sending...');
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j.success){var first=n.value.trim().split(' ')[0];f.reset();say('Thanks, '+first+'. Your message is on its way, and Jared will be in touch soon.');}
+        else{say('Your message did not send. Please try again, or email jared@towntalk.ca.');}
+      })
+      .catch(function(){say('Your message did not send. Check your connection and try again, or email jared@towntalk.ca.');})
+      .finally(function(){btn.disabled=false;});
   });
 })();
 </script>'''
+FORM_JS = FORM_JS_TEMPLATE.replace("__WEB3FORMS_KEY__", WEB3FORMS_KEY)
+PREVIEW_FORM_JS = FORM_JS_TEMPLATE.replace("__WEB3FORMS_KEY__", "")  # preview can't reach outside hosts
 
 
 def fill(html, mode):
@@ -365,7 +410,7 @@ def build_preview():
 </style>
 {"".join(sections)}
 {FOOTER}
-{FORM_JS}
+{PREVIEW_FORM_JS}
 {router}
 '''
     (out / "index.html").write_text(fill(doc, "preview"))

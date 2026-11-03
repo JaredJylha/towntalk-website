@@ -15,5 +15,4 @@ Static site: Home, Services, About, Contact.
 ## Contact form
 
 The form sends through [Web3Forms](https://web3forms.com), which emails each submission to jared@towntalk.ca.
-Paste the access key into `WEB3FORMS_KEY` in `build.py` and run `python3 build.py`. Until then the form
-asks visitors to email or call instead.
+The access key is set in `WEB3FORMS_KEY` in `build.py`; run `python3 build.py` after changing it.

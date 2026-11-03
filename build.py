@@ -305,7 +305,7 @@ BODIES = {"home": HOME, "services": SERVICES, "about": ABOUT, "contact": CONTACT
 
 # Contact form delivery: Web3Forms (https://web3forms.com) emails each submission to the
 # address the access key was created for (jared@towntalk.ca). The key is public by design.
-WEB3FORMS_KEY = ""
+WEB3FORMS_KEY = "fa269272-cd0e-4498-98c7-e3fd4660d626"
 
 FORM_JS_TEMPLATE = '''<script>
 (function(){

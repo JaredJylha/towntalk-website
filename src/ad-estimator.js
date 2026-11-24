@@ -112,10 +112,15 @@
       market: MARKET[a.market][1], average_job: TICKET[a.ticket],
       budget_shown: money(state.low) + ' to ' + money(state.high) + ' per month',
       channel_mix_shown: mixText,
+      email_updates: f['ae-updates'].checked ? 'Yes' : 'No',
       source: 'Ad budget estimator, Advertising page'
     };
     btn.disabled = true;
-    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+    (window.ttCaptcha ? window.ttCaptcha() : Promise.resolve(''))
+      .then(function (t) {
+        if (t) data.recaptcha_response = t;
+        return fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+      })
       .then(function (r) { return r.json(); })
       .then(function (j) { if (!j.success) throw 0; })
       .catch(function () { /* the visitor still gets their result */ })

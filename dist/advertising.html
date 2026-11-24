@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advertising | Town Talk Marketing Solutions</title>
+<meta name="description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:title" content="Advertising | Town Talk Marketing Solutions">
+<meta property="og:description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/emblem-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="ad-estimator.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Town Talk Marketing Solutions, home">
+    <img src="assets/emblem-light.png" alt="" width="256" height="224">
+    <span>Town Talk<small>Marketing Solutions</small></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="technology.html">Technology</a><a href="advertising.html" aria-current="page">Advertising</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Book a call</a></nav>
+</div></header>
+<main>
+<section class="page-hero">
+  <img class="ghost-mark" src="assets/emblem-light.png" alt="" width="256" height="224">
+  <div class="wrap">
+    <div class="eyebrow">Advertising</div>
+    <h1>Bring your invoices.</h1>
+    <p>Think of us as the angel on your shoulder. We review your ad contracts and agency agreements, build a media plan that fits your budget, run digital campaigns that send customers to your website, or teach your team to run them.</p>
+    <div class="btn-row"><a class="btn btn-solid" href="#estimator">Estimate your budget</a><a class="btn btn-ghost" href="contact.html">Book a review call</a></div>
+  </div>
+</section>
+
+<section class="band band-dark" id="estimator"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Free tool</div>
+    <h2>How much should you spend on advertising?</h2>
+    <p>Answer five questions for a recommended monthly budget. Leave your email to see how it should split across channels.</p>
+  </div>
+  <div class="tool" id="ad-estimator" data-key="fa269272-cd0e-4498-98c7-e3fd4660d626" data-contact="contact.html">
+    <div class="tool-head"><span>Ad budget estimator</span><span class="tag">Home improvement</span></div>
+    <div class="tool-grid">
+      <form class="tool-questions ae-questions" onsubmit="return false">
+        <fieldset><legend><label for="ae-type">1. What do you sell?</label></legend>
+          <select class="select" id="ae-type" name="ae-type">
+            <option value="">Choose your business</option>
+            <option value="insulation">Insulation and energy upgrades</option>
+            <option value="windows">Windows and doors</option>
+            <option value="hvac">HVAC and heat pumps</option>
+            <option value="roofing">Roofing and siding</option>
+            <option value="reno">Kitchens, baths and renovation</option>
+            <option value="outdoor">Decks, fences and outdoor living</option>
+            <option value="other">Other home services</option>
+          </select>
+        </fieldset>
+        <fieldset><legend>2. Annual revenue</legend><div class="opts">
+          <label class="opt"><input type="radio" name="ae-rev" value="r1"><span>Under $500K</span></label>
+          <label class="opt"><input type="radio" name="ae-rev" value="r2"><span>$500K&ndash;1M</span></label>
+          <label class="opt"><input type="radio" name="ae-rev" value="r3"><span>$1&ndash;3M</span></label>
+          <label class="opt"><input type="radio" name="ae-rev" value="r4"><span>$3&ndash;10M</span></label>
+          <label class="opt"><input type="radio" name="ae-rev" value="r5"><span>Over $10M</span></label>
+        </div></fieldset>
+        <fieldset><legend>3. Your goal for next year</legend><div class="opts">
+          <label class="opt"><input type="radio" name="ae-goal" value="hold"><span>Hold steady</span></label>
+          <label class="opt"><input type="radio" name="ae-goal" value="grow"><span>Grow steadily</span></label>
+          <label class="opt"><input type="radio" name="ae-goal" value="fast"><span>Grow fast</span></label>
+        </div></fieldset>
+        <fieldset><legend>4. Where you work</legend><div class="opts">
+          <label class="opt"><input type="radio" name="ae-market" value="town"><span>One town</span></label>
+          <label class="opt"><input type="radio" name="ae-market" value="region"><span>A region</span></label>
+          <label class="opt"><input type="radio" name="ae-market" value="multi"><span>Several markets</span></label>
+        </div></fieldset>
+        <fieldset><legend>5. Average job size</legend><div class="opts">
+          <label class="opt"><input type="radio" name="ae-ticket" value="low"><span>Under $2K</span></label>
+          <label class="opt"><input type="radio" name="ae-ticket" value="mid"><span>$2&ndash;10K</span></label>
+          <label class="opt"><input type="radio" name="ae-ticket" value="high"><span>$10&ndash;30K</span></label>
+          <label class="opt"><input type="radio" name="ae-ticket" value="top"><span>Over $30K</span></label>
+        </div></fieldset>
+      </form>
+      <div class="tool-out">
+        <div class="ae-result" aria-live="polite"></div>
+        <form class="form tool-gate ae-gate" novalidate hidden>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <h3>See your channel mix</h3>
+          <p>Where the budget should go, by channel. Free, and Jared will follow up personally, not a mailing list.</p>
+          <div class="field-row">
+            <div class="field"><label for="ae-name">Name</label><input id="ae-name" name="ae-name" autocomplete="name"></div>
+            <div class="field"><label for="ae-email">Email</label><input id="ae-email" name="ae-email" type="email" autocomplete="email"></div>
+          </div>
+          <div class="field"><label for="ae-business">Business name</label><input id="ae-business" name="ae-business" autocomplete="organization"></div>
+          <div class="btn-row"><button class="btn btn-solid" type="submit">Show my channel mix</button></div>
+          <p class="form-status" hidden></p>
+        </form>
+      </div>
+    </div>
+    <p class="ledger-note">A rule-of-thumb starting point for owner-run home improvement businesses, based on revenue, growth goals and market size. It isn't a media plan.</p>
+  </div>
+</div></section>
+
+<section class="band on-paper"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">What we do</div>
+    <h2>Four ways to get more from your ad spend.</h2>
+  </div>
+  <div class="services services-2">
+    <div class="service"><h3>Contract and agency review</h3><p>Bring your invoices. We read every contract and bill so you know what you're paying for and whether you're getting it.</p>
+      <ul><li>Media and agency invoices, line by line</li><li>Contract terms, auto-renewals and exit clauses</li><li>Management fees and markups</li><li>A plain report: keep, renegotiate or cut</li></ul></div>
+    <div class="service"><h3>Media plans</h3><p>A budget and channel plan built around your revenue, season and goals.</p>
+      <ul><li>Budget set from revenue and growth goals</li><li>Channel mix and seasonal schedule</li><li>Cost-per-lead targets for each channel</li><li>A plan you can take to any vendor</li></ul></div>
+    <div class="service"><h3>Digital ad campaigns</h3><p>Search and social campaigns that send homeowners to your website tools and quote forms.</p>
+      <ul><li>Google search and Meta (Facebook and Instagram)</li><li>Built around your rebate finder or estimator</li><li>Call and form tracking from day one</li><li>Monthly report in plain numbers</li></ul></div>
+    <div class="service"><h3>Digital ad training</h3><p>Rather run your own ads? We'll teach you or your team to do it well, one-on-one or in a group.</p>
+      <ul><li>Google Ads and Meta ads, step by step</li><li>Setting budgets and reading the results</li><li>Campaign strategy and optimization</li><li>Hands-on, using your own accounts</li></ul></div>
+  </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap split">
+  <div class="copy">
+    <div class="eyebrow">Where the money goes</div>
+    <h2>We read your marketing like a ledger.</h2>
+    <p>Before we recommend anything, we line up every advertising cost against what it produced. Most businesses find at least one line nobody can explain.</p>
+    <p>From there the plan is simple: keep what earns, fix what could, and stop paying for what doesn't.</p>
+  </div>
+  <div class="ledger" role="figure" aria-label="Example monthly marketing spend review">
+    <div class="ledger-head"><span>Monthly spend review</span><span class="tag">Example</span></div>
+    <div class="ledger-scroll"><table>
+      <thead><tr><th>Channel</th><th class="num">Spend / mo</th><th class="num">Result</th><th class="num">Cost each</th></tr></thead>
+      <tbody>
+        <tr><td>Search ads</td><td class="num">$900</td><td class="num">61 calls</td><td class="num">$14.75</td></tr>
+        <tr><td>Social ads</td><td class="num">$1,600</td><td class="num">38 leads</td><td class="num">$42.10</td></tr>
+        <tr class="flag"><td>Print directory</td><td class="num">$1,100</td><td class="num"><span class="unknown">Not tracked</span></td><td class="num">?</td></tr>
+        <tr class="flag"><td>Local radio</td><td class="num">$600</td><td class="num"><span class="unknown">Not tracked</span></td><td class="num">?</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td class="num">$4,200</td><td class="num"></td><td class="num">40% unaccounted</td></tr></tfoot>
+    </table></div>
+    <div class="ledger-note">Illustrative figures for a local window and door company. In a real review these come from your own invoices and reports.</div>
+  </div>
+</div></section>
+
+<section class="band band-dark"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">How a review works</div>
+    <h2>From a pile of invoices to a clear plan.</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Send</h3><p>Email your last three to six months of ad invoices, contracts and any reports you get.</p></li>
+    <li><h3>Review</h3><p>We line up each cost against what it produced and check the terms you signed.</p></li>
+    <li><h3>Report</h3><p>A short, plain-language read-out: what to keep, renegotiate and stop.</p></li>
+    <li><h3>Plan</h3><p>A media plan for the budget you have, aimed at cost per lead.</p></li>
+    <li><h3>Launch</h3><p>We run the digital campaigns, or hand the plan to your team and train them to run it.</p></li>
+  </ol>
+</div></section>
+<section class="cta"><div class="wrap on-paper" style="background:transparent">
+  <div>
+    <h2>Bring your invoices.</h2>
+    <p>Book a free 30-minute call. Send your last few ad invoices beforehand and we'll tell you what we see.</p>
+  </div>
+  <div class="btn-row"><a class="btn btn-solid" href="contact.html">Book a review call</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div>
+    <img src="assets/logo-light.png" alt="Town Talk Marketing Solutions" width="290" height="163">
+    <p>Lead-generation tools and independent advertising advice for home improvement businesses. Plain answers and a straight account of where the money goes.</p>
+  </div>
+  <div><h4>Site</h4><ul><li><a href="index.html">Home</a></li><li><a href="technology.html">Technology</a></li><li><a href="advertising.html">Advertising</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
+  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
+</div></footer>
+
+</body>
+</html>

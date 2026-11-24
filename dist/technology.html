@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Technology | Town Talk Marketing Solutions</title>
+<meta name="description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:title" content="Technology | Town Talk Marketing Solutions">
+<meta property="og:description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/emblem-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="rebate-finder.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Town Talk Marketing Solutions, home">
+    <img src="assets/emblem-light.png" alt="" width="256" height="224">
+    <span>Town Talk<small>Marketing Solutions</small></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="technology.html" aria-current="page">Technology</a><a href="advertising.html">Advertising</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Book a call</a></nav>
+</div></header>
+<main>
+<section class="page-hero">
+  <img class="ghost-mark" src="assets/emblem-light.png" alt="" width="256" height="224">
+  <div class="wrap">
+    <div class="eyebrow">Technology</div>
+    <h1>Website tools that turn visitors into leads.</h1>
+    <p>Small, fast widgets for home improvement websites. They answer a customer's question on the spot and hand your sales team a qualified lead: name, email and exactly what they're interested in.</p>
+    <div class="btn-row"><a class="btn btn-solid" href="#demo">Try the demo</a><a class="btn btn-ghost" href="contact.html">Book a call</a></div>
+  </div>
+</section>
+
+<section class="band band-dark" id="demo"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Try it</div>
+    <h2>Rebate finder demo.</h2>
+    <p>Set up for an example insulation company. Homeowners answer three quick questions, see the rebates they may qualify for, and request their full breakdown and an assessment.</p>
+  </div>
+  <div class="tool" id="rebate-finder">
+    <div class="tool-head"><span>Home energy rebate finder</span><span class="tag">Demo</span></div>
+    <div class="tool-grid">
+      <form class="tool-questions rf-questions" onsubmit="return false">
+        <fieldset><legend>1. What kind of home?</legend><div class="opts">
+          <label class="opt"><input type="radio" name="rf-home" value="detached"><span>Detached house</span></label>
+          <label class="opt"><input type="radio" name="rf-home" value="attached"><span>Semi or townhouse</span></label>
+          <label class="opt"><input type="radio" name="rf-home" value="mobile"><span>Mobile or modular</span></label>
+        </div></fieldset>
+        <fieldset><legend>2. How is it heated?</legend><div class="opts">
+          <label class="opt"><input type="radio" name="rf-heat" value="gas"><span>Natural gas</span></label>
+          <label class="opt"><input type="radio" name="rf-heat" value="electric"><span>Electric</span></label>
+          <label class="opt"><input type="radio" name="rf-heat" value="oil"><span>Oil or propane</span></label>
+          <label class="opt"><input type="radio" name="rf-heat" value="heatpump"><span>Heat pump</span></label>
+        </div></fieldset>
+        <fieldset><legend>3. What are you thinking of upgrading? <small>Pick any</small></legend><div class="opts">
+          <label class="opt"><input type="checkbox" name="rf-up" value="attic"><span>Attic insulation</span></label>
+          <label class="opt"><input type="checkbox" name="rf-up" value="wall"><span>Wall insulation</span></label>
+          <label class="opt"><input type="checkbox" name="rf-up" value="basement"><span>Basement insulation</span></label>
+          <label class="opt"><input type="checkbox" name="rf-up" value="air"><span>Air sealing</span></label>
+          <label class="opt"><input type="checkbox" name="rf-up" value="windows"><span>Windows and doors</span></label>
+          <label class="opt"><input type="checkbox" name="rf-up" value="heatpump"><span>Heat pump</span></label>
+        </div></fieldset>
+      </form>
+      <div class="tool-out">
+        <div class="rf-result" aria-live="polite"></div>
+        <form class="form tool-gate rf-gate" novalidate hidden>
+          <h3>Get your full rebate breakdown</h3>
+          <p>We'll email the amounts for each program and call to book a free home assessment.</p>
+          <div class="field-row">
+            <div class="field"><label for="rf-name">Name</label><input id="rf-name" name="rf-name" autocomplete="name"></div>
+            <div class="field"><label for="rf-email">Email</label><input id="rf-email" name="rf-email" type="email" autocomplete="email"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="rf-phone">Phone</label><input id="rf-phone" name="rf-phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="rf-postal">Postal code</label><input id="rf-postal" name="rf-postal" autocomplete="postal-code"></div>
+          </div>
+          <label class="check"><input type="checkbox" name="rf-book" checked><span>Yes, book my free on-site assessment</span></label>
+          <div class="btn-row"><button class="btn btn-solid" type="submit">Show my rebates</button></div>
+          <p class="form-status" hidden></p>
+        </form>
+      </div>
+    </div>
+    <div class="rf-lead" hidden>
+      <div class="lead-head"><span>What the business receives</span><span class="tag">New lead</span></div>
+      <table><tbody></tbody></table>
+      <p class="ledger-note">In a live version this lands in the company's inbox or CRM within seconds, and nothing is sent from this demo. Rebate amounts here are example figures; your version is built on the current programs in your area.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band on-paper"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">What we build</div>
+    <h2>Tools your customers will actually use.</h2>
+    <p>Each one is built for your business, matches your brand, and works on any website. One-time build fee.</p>
+  </div>
+  <div class="services">
+    <div class="service"><h3>Rebate finders</h3><p>Show homeowners the rebates and financing they may qualify for, then collect their details for a quote or assessment.</p></div>
+    <div class="service"><h3>Cost estimators</h3><p>A ballpark price for a roof, deck or window package in a minute, so serious buyers raise their hand.</p></div>
+    <div class="service"><h3>Product match quizzes</h3><p>A few questions that point customers to the right product line, with the answers passed to your sales team.</p></div>
+    <div class="service"><h3>Assessment booking</h3><p>Let customers request an on-site visit or consultation without phone tag, with the job details already filled in.</p></div>
+    <div class="service"><h3>Financing calculators</h3><p>Turn a big number into a monthly payment, which keeps more people in the conversation.</p></div>
+    <div class="service"><h3>AI assistants</h3><p>Coming next: website helpers that answer common questions any time of day and hand hot leads to your team.</p></div>
+  </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">How it works</div>
+    <h2>Live on your site in weeks, not months.</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Talk</h3><p>A short call about the question your customers ask most and how your team follows up.</p></li>
+    <li><h3>Build</h3><p>We build the tool around your products, service area and brand.</p></li>
+    <li><h3>Install</h3><p>A small snippet added to your site. It works with WordPress, Wix, Squarespace and the rest.</p></li>
+    <li><h3>Collect leads</h3><p>Every submission goes to your inbox or CRM with the customer's answers attached.</p></li>
+    <li><h3>Add traffic</h3><p>Pair it with a digital ad campaign that sends the right homeowners straight to the tool.</p></li>
+  </ol>
+  <div class="btn-row" style="margin-top:2.5rem"><a class="btn btn-ghost" href="advertising.html">See advertising services</a></div>
+</div></section>
+<section class="cta"><div class="wrap on-paper" style="background:transparent">
+  <div>
+    <h2>Want a tool like this on your site?</h2>
+    <p>Tell us the question your customers ask most. We'll show you what a tool for it could look like on a free 30-minute call.</p>
+  </div>
+  <div class="btn-row"><a class="btn btn-solid" href="contact.html">Book a free call</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div>
+    <img src="assets/logo-light.png" alt="Town Talk Marketing Solutions" width="290" height="163">
+    <p>Lead-generation tools and independent advertising advice for home improvement businesses. Plain answers and a straight account of where the money goes.</p>
+  </div>
+  <div><h4>Site</h4><ul><li><a href="index.html">Home</a></li><li><a href="technology.html">Technology</a></li><li><a href="advertising.html">Advertising</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
+  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
+</div></footer>
+
+</body>
+</html>

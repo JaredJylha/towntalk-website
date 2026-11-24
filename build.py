@@ -55,7 +55,7 @@ FOOTER = '''<footer class="site-footer"><div class="wrap">
     <p>Lead-generation tools and independent advertising advice for home improvement businesses. Plain answers and a straight account of where the money goes.</p>
   </div>
   <div><h4>Site</h4><ul><li><a href="{{home}}">Home</a></li><li><a href="{{technology}}">Technology</a></li><li><a href="{{advertising}}">Advertising</a></li><li><a href="{{about}}">About</a></li><li><a href="{{contact}}">Contact</a></li><li><a href="{{privacy}}">Privacy</a></li></ul></div>
-  <div><h4>Get in touch</h4><ul><li><a href="{{contact}}">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="{{contact}}">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Serving all of Canada</li></ul></div>
   <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions &middot; <a href="{{privacy}}">Privacy policy</a></span><span>Independent marketing consultancy</span></div>
 </div></footer>'''
 

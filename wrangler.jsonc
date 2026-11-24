@@ -1,0 +1,8 @@
+// Cloudflare Workers config: serve the prebuilt static site in dist/ (no build step needed).
+{
+  "name": "towntalk-website",
+  "compatibility_date": "2026-11-13",
+  "assets": {
+    "directory": "./dist"
+  }
+}

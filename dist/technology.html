@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Technology | Town Talk Marketing Solutions</title>
+<meta name="description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:title" content="Technology | Town Talk Marketing Solutions">
+<meta property="og:description" content="Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/emblem-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="rebate-finder.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Town Talk Marketing Solutions, home">
+    <img src="assets/emblem-light.png" alt="" width="256" height="224">
+    <span>Town Talk<small>Marketing Solutions</small></span>
+  </a>
+  <nav class="nav" aria-label="Main"><a href="technology.html" aria-current="page">Technology</a><a href="advertising.html">Advertising</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Book a call</a></nav>
+</div></header>
+<main>
+<section class="page-hero">
+  <img class="ghost-mark" src="assets/emblem-light.png" alt="" width="256" height="224">
+  <div class="wrap">
+    <div class="eyebrow">Technology</div>
+    <h1>Website tools that turn visitors into leads.</h1>
+    <p>Small, fast widgets for home improvement websites. They answer a customer's question on the spot and hand your sales team a qualified lead: name, email and exactly what they're interested in.</p>
+    <div class="btn-row"><a class="btn btn-solid" href="#demo">Try the demo</a><a class="btn btn-ghost" href="contact.html">Book a call</a></div>
+  </div>
+</section>
+
+<section class="band band-dark" id="demo"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Try it</div>
+    <h2>Insulation rebate calculator.</h2>
+    <p>Built for insulation companies and tied to Ontario's Home Renovation Savings program. Homeowners see what they could get back in about two minutes, then ask for a quote. This is how it would look on your website, with your logo.</p>
+  </div>
+  <div class="rb" id="rebate-finder">
+    <div class="rb-top">
+      <div class="rb-logo">Your logo here</div>
+      <span class="rb-phone">Your phone number</span>
+    </div>
+    <div class="rb-intro">
+      <h3>See what Ontario will pay you to insulate.</h3>
+      <p>Answer a few questions about your home and the upgrades you're considering. You'll get an estimate under the Home Renovation Savings program in about two minutes.</p>
+    </div>
+    <div class="rb-grid">
+      <form class="rb-main" onsubmit="return false">
+        <section class="rb-step">
+          <h4><span>1</span> Your home</h4>
+          <p class="rb-hint">The program has a few basic eligibility rules.</p>
+          <div class="rb-q"><span class="rb-label">Postal code</span><input type="text" id="rb-postal" class="rb-input rb-small" maxlength="7" placeholder="L0K 1A0" autocomplete="postal-code"></div>
+          <div class="rb-q"><span class="rb-label">Do you own the home?</span><div class="opts"><label class="opt"><input type="radio" name="rb-own" value="owner" checked><span>Yes, I live here</span></label><label class="opt"><input type="radio" name="rb-own" value="landlord"><span>Yes, it's a rental I own</span></label><label class="opt"><input type="radio" name="rb-own" value="renter"><span>No, I rent</span></label></div></div>
+          <div class="rb-q"><span class="rb-label">Type of home</span><div class="opts"><label class="opt"><input type="radio" name="rb-htype" value="detached" checked><span>Detached</span></label><label class="opt"><input type="radio" name="rb-htype" value="semi"><span>Semi-detached</span></label><label class="opt"><input type="radio" name="rb-htype" value="row"><span>Row or townhouse</span></label><label class="opt"><input type="radio" name="rb-htype" value="mobile"><span>Mobile home on foundation</span></label><label class="opt"><input type="radio" name="rb-htype" value="stacked"><span>Stacked townhouse or condo</span></label></div></div>
+          <div class="rb-q"><span class="rb-label">How is it mainly heated?</span><div class="opts"><label class="opt"><input type="radio" name="rb-heat" value="gas" checked><span>Natural gas (Enbridge)</span></label><label class="opt"><input type="radio" name="rb-heat" value="gas-other"><span>Natural gas (other utility)</span></label><label class="opt"><input type="radio" name="rb-heat" value="electric"><span>Electricity</span></label><label class="opt"><input type="radio" name="rb-heat" value="oil"><span>Oil</span></label><label class="opt"><input type="radio" name="rb-heat" value="propane"><span>Propane</span></label><label class="opt"><input type="radio" name="rb-heat" value="wood"><span>Wood</span></label></div></div>
+        </section>
+        <section class="rb-step">
+          <h4><span>2</span> Upgrades you're considering</h4>
+          <p class="rb-hint">Pick everything you might do. Two or more upgrades usually unlock a bigger rebate.</p>
+          <div class="rb-upg" data-upg="attic">
+            <label class="rb-upg-head"><input type="checkbox" value="attic"><span><strong>Attic insulation</strong><em>Top up the attic floor to R-50 or higher</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Roof style</span><div class="opts"><label class="opt"><input type="radio" name="rb-atticType" value="standard" checked><span>Standard attic</span></label><label class="opt"><input type="radio" name="rb-atticType" value="cathedral"><span>Cathedral ceiling or flat roof</span></label></div></div><div class="rb-q" id="rb-atticLevelQ"><span class="rb-label">How much insulation is there now?</span><div class="opts"><label class="opt"><input type="radio" name="rb-atticNow" value="r12" checked><span>Little or none (R-12 or less, under 4&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="r25"><span>Some (R-12 to R-25, 4&ndash;8&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="r35"><span>Moderate (R-25 to R-35, 8&ndash;11&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="full"><span>Plenty (over R-35)</span></label></div></div><div class="rb-q"><span class="rb-label">Rough quote for the attic work (optional)</span><input type="number" id="rb-atticCost" class="rb-input rb-small" min="0" step="100" placeholder="$ before tax"></div></div>
+          </div>
+          <div class="rb-upg" data-upg="walls">
+            <label class="rb-upg-head"><input type="checkbox" value="walls"><span><strong>Exterior wall insulation</strong><em>Blown-in or exterior board, covering all exterior walls</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Insulation value added</span><div class="opts"><label class="opt"><input type="radio" name="rb-walls" value="low" checked><span>R-7.5 to R-12</span></label><label class="opt"><input type="radio" name="rb-walls" value="mid"><span>R-12 to R-20</span></label><label class="opt"><input type="radio" name="rb-walls" value="high"><span>Over R-20</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="basement">
+            <label class="rb-upg-head"><input type="checkbox" value="basement"><span><strong>Basement walls</strong><em>Insulating the full basement wall area</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Insulation value added</span><div class="opts"><label class="opt"><input type="radio" name="rb-basement" value="mid" checked><span>R-10 to R-22</span></label><label class="opt"><input type="radio" name="rb-basement" value="high"><span>Over R-22</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="crawl">
+            <label class="rb-upg-head"><input type="checkbox" value="crawl"><span><strong>Crawl space</strong><em>Insulating the crawl space walls or ceiling</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">What's being insulated</span><div class="opts"><label class="opt"><input type="radio" name="rb-crawl" value="wallMid" checked><span>Walls, R-10 to R-22</span></label><label class="opt"><input type="radio" name="rb-crawl" value="wallHigh"><span>Walls, over R-22</span></label><label class="opt"><input type="radio" name="rb-crawl" value="ceiling"><span>Ceiling, over R-24</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="header">
+            <label class="rb-upg-head"><input type="checkbox" value="header"><span><strong>Rim joists / foundation header</strong><em>Only counts alongside basement or crawl space wall work</em></span></label>
+            
+          </div>
+          <div class="rb-upg" data-upg="slab">
+            <label class="rb-upg-head"><input type="checkbox" value="slab"><span><strong>Basement floor slab</strong><em>Insulating at least half the slab</em></span></label>
+            
+          </div>
+          <div class="rb-upg" data-upg="windows">
+            <label class="rb-upg-head"><input type="checkbox" value="windows"><span><strong>ENERGY STAR windows and doors</strong><em>Full-frame replacements, $100 per opening</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Number of openings</span><input type="number" id="rb-windowCount" class="rb-input rb-small" min="1" max="60" value="8"></div></div>
+          </div>
+          <div class="rb-upg" data-upg="air">
+            <label class="rb-upg-head"><input type="checkbox" value="air"><span><strong>Air sealing</strong><em>Paid if your home meets the airtightness target after the work</em></span></label>
+            
+          </div>
+        </section>
+      </form>
+      <aside class="rb-panel" aria-live="polite">
+        <div class="rb-house" aria-hidden="true">
+          <svg viewBox="0 0 320 290">
+            <defs><pattern id="rb-batt" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" class="rb-batt-bg"/><path d="M0 5 Q2.5 0 5 5 T10 5" class="rb-batt-line"/></pattern></defs>
+            <rect x="0" y="204" width="320" height="86" class="rb-ground"/>
+            <polygon class="rb-zone" data-z="attic" points="66,104 160,44 254,104"/>
+            <rect class="rb-zone" data-z="walls" x="60" y="108" width="12" height="92"/>
+            <rect class="rb-zone" data-z="walls" x="248" y="108" width="12" height="92"/>
+            <rect class="rb-zone" data-z="windows" x="98" y="132" width="30" height="36"/>
+            <rect class="rb-zone" data-z="windows" x="192" y="132" width="30" height="36"/>
+            <rect class="rb-zone" data-z="header" x="72" y="198" width="176" height="8"/>
+            <rect class="rb-zone" data-z="basement" x="60" y="206" width="12" height="62"/>
+            <rect class="rb-zone" data-z="basement" x="248" y="206" width="12" height="62"/>
+            <rect class="rb-zone" data-z="slab" x="72" y="262" width="176" height="6"/>
+            <polyline class="rb-shell" points="40,110 160,30 280,110"/>
+            <rect class="rb-shell" x="60" y="108" width="200" height="160"/>
+            <line class="rb-shell" x1="60" y1="206" x2="260" y2="206"/>
+            <line x1="10" y1="204" x2="310" y2="204" class="rb-gline"/>
+          </svg>
+        </div>
+        <div class="rb-result">
+          <p class="rb-total-label">Estimated rebate</p>
+          <div class="rb-total" id="rb-total">$0</div>
+          <p class="rb-path" id="rb-path">Choose an upgrade to see your estimate.</p>
+          <div id="rb-notes"></div>
+          <ul class="rb-lines" id="rb-lines"></ul>
+          <button class="rb-btn" type="button" id="rb-quoteBtn" disabled>Get my free quote</button>
+          <form class="rb-lead" id="rb-lead" novalidate hidden>
+            <div class="rb-row"><label for="rb-lname">Name</label><input class="rb-input" type="text" id="rb-lname" autocomplete="name"></div>
+            <div class="rb-row"><label for="rb-lemail">Email</label><input class="rb-input" type="email" id="rb-lemail" autocomplete="email"></div>
+            <div class="rb-row"><label for="rb-lphone">Phone</label><input class="rb-input" type="tel" id="rb-lphone" autocomplete="tel"></div>
+            <label class="rb-consent"><input type="checkbox" id="rb-lconsent"> I agree to be contacted about my quote. I can unsubscribe anytime.</label>
+            <p class="rb-note rb-stop" id="rb-leadErr" hidden></p>
+            <button class="rb-btn" type="submit">Request my quote</button>
+          </form>
+          <div class="rb-sent" id="rb-sent" hidden><strong>Request sent</strong><span>Demo mode: nothing was sent. On your site, the lead below goes straight to your inbox or CRM.</span></div>
+          <p class="rb-fine" id="rb-fine"></p>
+        </div>
+      </aside>
+    </div>
+    <div class="rf-lead" hidden>
+      <div class="lead-head"><span>What your sales team receives</span><span class="tag">New lead</span></div>
+      <table><tbody></tbody></table>
+    </div>
+  </div>
+  <div class="offer">
+    <div>
+      <h3>Your own version, built once.</h3>
+      <p>One-time fee, no subscription. Book a consultation and we'll build the tool you need, work with your web developer to install it, and brand it with your logo and colours.</p>
+    </div>
+    <div class="btn-row"><a class="btn btn-solid" href="contact.html">Book a consultation</a></div>
+  </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">How it fits together</div>
+    <h2>From first click to booked visit.</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Add a tool</h3><p>A widget on your site answers the question customers ask most: what rebates can I get, or what will this cost?</p></li>
+    <li><h3>Capture the lead</h3><p>To see their full result, visitors leave their email and project details. It goes straight to your sales team.</p></li>
+    <li><h3>Book the visit</h3><p>Your team follows up with a quote or an on-site assessment, already knowing what the customer wants.</p></li>
+    <li><h3>Drive traffic</h3><p>Digital ads send the right homeowners to the tool, and you see the cost of every lead in plain numbers.</p></li>
+  </ol>
+</div></section>
+
+<section class="band on-paper"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">What we build</div>
+    <h2>Tools your customers will actually use.</h2>
+    <p>Each one is built for your business, matches your brand, and works on any website. One-time fee, no subscription.</p>
+  </div>
+  <div class="services">
+    <div class="service"><h3>Rebate finders</h3><p>Show homeowners the rebates and financing they may qualify for, then collect their details for a quote or assessment.</p></div>
+    <div class="service"><h3>Cost estimators</h3><p>A ballpark price for a roof, deck or window package in a minute, so serious buyers raise their hand.</p></div>
+    <div class="service"><h3>Product match quizzes</h3><p>A few questions that point customers to the right product line, with the answers passed to your sales team.</p></div>
+    <div class="service"><h3>Assessment booking</h3><p>Let customers request an on-site visit or consultation without phone tag, with the job details already filled in.</p></div>
+    <div class="service"><h3>Financing calculators</h3><p>Turn a big number into a monthly payment, which keeps more people in the conversation.</p></div>
+    <div class="service"><h3>AI assistants</h3><p>Coming next: website helpers that answer common questions any time of day and hand hot leads to your team.</p></div>
+  </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">How it works</div>
+    <h2>Live on your site in weeks, not months.</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Talk</h3><p>A short call about the question your customers ask most and how your team follows up.</p></li>
+    <li><h3>Build</h3><p>We build the tool around your products, service area and brand.</p></li>
+    <li><h3>Install</h3><p>A small snippet added to your site. It works with WordPress, Wix, Squarespace and the rest.</p></li>
+    <li><h3>Collect leads</h3><p>Every submission goes to your inbox or CRM with the customer's answers attached.</p></li>
+    <li><h3>Add traffic</h3><p>Pair it with a digital ad campaign that sends the right homeowners straight to the tool.</p></li>
+  </ol>
+  <div class="btn-row" style="margin-top:2.5rem"><a class="btn btn-ghost" href="advertising.html">See advertising services</a></div>
+</div></section>
+<section class="cta"><div class="wrap on-paper" style="background:transparent">
+  <div>
+    <h2>Want a tool like this on your site?</h2>
+    <p>Tell us the question your customers ask most. We'll show you what a tool for it could look like on a free 30-minute call.</p>
+  </div>
+  <div class="btn-row"><a class="btn btn-solid" href="contact.html">Book a free call</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div>
+    <img src="assets/logo-light.png" alt="Town Talk Marketing Solutions" width="290" height="163">
+    <p>Lead-generation tools and independent advertising advice for home improvement businesses. Plain answers and a straight account of where the money goes.</p>
+  </div>
+  <div><h4>Site</h4><ul><li><a href="index.html">Home</a></li><li><a href="technology.html">Technology</a></li><li><a href="advertising.html">Advertising</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><h4>Get in touch</h4><ul><li><a href="contact.html">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
+  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
+</div></footer>
+
+</body>
+</html>

@@ -32,7 +32,7 @@ DESC = "Town Talk Marketing Solutions builds lead-generation tools for home impr
 WEB3FORMS_KEY = "fa269272-cd0e-4498-98c7-e3fd4660d626"
 # Google reCAPTCHA v3 site key (public). Leave empty until reCAPTCHA is set up in Web3Forms;
 # once set, every form sends a fresh token as recaptcha_response.
-RECAPTCHA_SITE_KEY = ""
+RECAPTCHA_SITE_KEY = "6Ldwgi8uAAAAAB4QgcJ0fy11wyEJzB3iLY8g06xr"
 
 
 def header(cur):

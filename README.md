@@ -16,6 +16,10 @@ Static site: Home, Technology, Advertising, About, Contact.
 - Build command: (leave empty)
 - Build output directory: `dist`
 
+## Cloudflare Workers
+
+`wrangler.jsonc` tells Workers Builds to serve `dist/` as static assets. Deploy command: `npx wrangler deploy` (no build command).
+
 ## Contact form
 
 The form sends through [Web3Forms](https://web3forms.com), which emails each submission to jared@towntalk.ca.

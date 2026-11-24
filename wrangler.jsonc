@@ -4,5 +4,7 @@
   "compatibility_date": "2026-11-13",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  // Branch builds run `npx wrangler preview`, which needs this block (it can stay empty).
+  "previews": {}
 }

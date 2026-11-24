@@ -344,3 +344,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .rf-lead .ledger-note { color: var(--muted-light); border-top: 0; }
 .tool > .ledger-note { border-top: 1px solid var(--rule-dark); }
 .tool [hidden] { display: none !important; }
+.hero-special { display: grid; gap: 0.6rem; border-left: 2px solid var(--paper); padding-left: 1rem; max-width: 46ch; }
+.hero-special p { color: var(--paper); font-weight: 600; font-size: 1.05rem; }
+.band-night .pillar:hover { background: var(--ink); }

@@ -71,9 +71,13 @@ CTA = cta("Find out what your marketing is really doing.",
 HOME = '''<section class="hero">
   <img class="hero-img" src="assets/hero.jpg" srcset="assets/hero-sm.jpg 836w, assets/hero.jpg 1672w" sizes="100vw" alt="" width="1672" height="941">
   <div class="wrap">
-    <div class="eyebrow">Making marketing make sense</div>
-    <h1>Turn website visits into booked jobs.</h1>
-    <p class="lede">Town Talk builds simple lead-generation tools for your website, then makes sure the advertising that sends people to them is worth what you pay.</p>
+    <div class="eyebrow">Marketing Solutions</div>
+    <h1>Smarter marketing for local business.</h1>
+    <p class="lede">Town Talk is an independent consultancy for small and mid-sized businesses. We help you decide where to spend, cut what isn't working, and see what every dollar is doing.</p>
+    <div class="hero-special">
+      <div class="eyebrow">What we specialize in</div>
+      <p>Town Talk builds simple lead-generation tools for your website, then makes sure the advertising that sends people to them is worth what you pay.</p>
+    </div>
     <div class="btn-row"><a class="btn btn-solid" href="{{technology}}#demo">Try the rebate finder</a><a class="btn btn-ghost" href="{{advertising}}#estimator">Estimate your ad budget</a></div>
   </div>
 </section>
@@ -81,19 +85,43 @@ HOME = '''<section class="hero">
 <section class="band on-paper"><div class="wrap">
   <div class="section-head">
     <div class="eyebrow">Sound familiar?</div>
-    <h2>What we hear from owners every week.</h2>
+    <h2>Most owners we meet are asking the same questions.</h2>
   </div>
   <ul class="questions">
-    <li>&ldquo;Customers don't understand the rebates.&rdquo;</li>
-    <li>&ldquo;Our site gets visits but few quote requests.&rdquo;</li>
+    <li>&ldquo;Is any of this advertising working?&rdquo;</li>
+    <li>&ldquo;Every vendor says their channel is the one.&rdquo;</li>
     <li>&ldquo;Is our agency worth what we pay?&rdquo;</li>
-    <li>&ldquo;Where should next year's ad budget go?&rdquo;</li>
+    <li>&ldquo;Our site gets visits but few quote requests.&rdquo;</li>
   </ul>
 </div></section>
 
-<section class="band band-dark"><div class="wrap">
+<section class="band band-dark"><div class="wrap split">
+  <div class="copy">
+    <div class="eyebrow">Where the money goes</div>
+    <h2>We start by reading your marketing like a ledger.</h2>
+    <p>Before we recommend anything, we line up every marketing cost against what it produced. Most businesses find at least one line nobody can explain.</p>
+    <p>From there the plan is simple: keep what earns, fix what could, and stop paying for what doesn't.</p>
+    <div class="btn-row"><a class="btn btn-ghost" href="{{advertising}}">How a review works</a></div>
+  </div>
+  <div class="ledger" role="figure" aria-label="Example monthly marketing spend review">
+    <div class="ledger-head"><span>Monthly spend review</span><span class="tag">Example</span></div>
+    <div class="ledger-scroll"><table>
+      <thead><tr><th>Channel</th><th class="num">Spend / mo</th><th class="num">Result</th><th class="num">Cost each</th></tr></thead>
+      <tbody>
+        <tr><td>Search ads</td><td class="num">$900</td><td class="num">61 calls</td><td class="num">$14.75</td></tr>
+        <tr><td>Social ads</td><td class="num">$1,600</td><td class="num">38 leads</td><td class="num">$42.10</td></tr>
+        <tr class="flag"><td>Print directory</td><td class="num">$1,100</td><td class="num"><span class="unknown">Not tracked</span></td><td class="num">?</td></tr>
+        <tr class="flag"><td>Local radio</td><td class="num">$600</td><td class="num"><span class="unknown">Not tracked</span></td><td class="num">?</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td class="num">$4,200</td><td class="num"></td><td class="num">40% unaccounted</td></tr></tfoot>
+    </table></div>
+    <div class="ledger-note">Illustrative figures for a local retailer. In a real review these come from your own invoices and reports.</div>
+  </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap">
   <div class="section-head">
-    <div class="eyebrow">What we do</div>
+    <div class="eyebrow">What we specialize in</div>
     <h2>Two ways we help.</h2>
     <p>Start with either one. Most clients end up using both, because one feeds the other.</p>
   </div>
@@ -115,40 +143,27 @@ HOME = '''<section class="hero">
   </div>
 </div></section>
 
-<section class="band band-night"><div class="wrap">
-  <div class="section-head">
-    <div class="eyebrow">How it fits together</div>
-    <h2>From first click to booked visit.</h2>
-  </div>
-  <ol class="steps">
-    <li><h3>Add a tool</h3><p>A widget on your site answers the question customers ask most: what rebates can I get, or what will this cost?</p></li>
-    <li><h3>Capture the lead</h3><p>To see their full result, visitors leave their email and project details. It goes straight to your sales team.</p></li>
-    <li><h3>Book the visit</h3><p>Your team follows up with a quote or an on-site assessment, already knowing what the customer wants.</p></li>
-    <li><h3>Drive traffic</h3><p>Digital ads send the right homeowners to the tool, and you see the cost of every lead in plain numbers.</p></li>
-  </ol>
-</div></section>
-
 <section class="band on-paper"><div class="wrap">
   <div class="section-head">
     <div class="eyebrow">Who we work with</div>
     <h2>Built for home improvement.</h2>
-    <p>Owner-run businesses with big-ticket jobs, a sales team or estimator, and no time to manage five marketing vendors.</p>
+    <p>Owner-run trades and contractors with no time to manage five marketing vendors.</p>
   </div>
   <ul class="chips chips-paper">
-    <li>Insulation and energy upgrades</li><li>Windows and doors</li><li>HVAC and heat pumps</li><li>Roofing and siding</li><li>Kitchens, baths and renovation</li><li>Decks, fences and outdoor living</li><li>Builders and contractors</li>
+    <li>Carpenters</li><li>Electricians</li><li>Plumbers</li><li>HVAC technicians</li><li>Roofers</li><li>Insulation installers</li><li>Window and door installers</li><li>Painters</li><li>Flooring installers</li><li>Masons and concrete</li><li>Landscapers</li><li>General contractors</li>
   </ul>
 </div></section>
 
 <section class="band band-dark"><div class="wrap">
   <div class="section-head">
     <div class="eyebrow">Not an agency</div>
-    <h2>Independent, and on your side of the table.</h2>
-    <p>We build what brings in leads and tell you plainly what your advertising is returning. That keeps the advice honest.</p>
+    <h2>Independent advice, on your side of the table.</h2>
+    <p>Agencies earn more when you spend more. We earn our fee by helping you spend well. That keeps the advice honest.</p>
   </div>
   <div class="values">
     <div><h3>Plain answers</h3><p>No jargon and no fifty-slide decks. You get a short list of what to do next and why.</p></div>
-    <div><h3>Clear numbers</h3><p>Every recommendation ties back to cost per lead and results you can check yourself.</p></div>
-    <div><h3>Quick to start</h3><p>Small, fixed-price pieces of work that show results fast, so you can judge us on what we deliver.</p></div>
+    <div><h3>Clear numbers</h3><p>Every recommendation ties back to cost and results you can check yourself.</p></div>
+    <div><h3>Hands on</h3><p>We don't hand over a plan and leave. We help get it done and coordinate the people doing it.</p></div>
   </div>
 </div></section>
 ''' + CTA
@@ -218,6 +233,19 @@ TECHNOLOGY = '''<section class="page-hero">
       <p class="ledger-note">In a live version this lands in the company's inbox or CRM within seconds, and nothing is sent from this demo. Rebate amounts here are example figures; your version is built on the current programs in your area.</p>
     </div>
   </div>
+</div></section>
+
+<section class="band band-night"><div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">How it fits together</div>
+    <h2>From first click to booked visit.</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Add a tool</h3><p>A widget on your site answers the question customers ask most: what rebates can I get, or what will this cost?</p></li>
+    <li><h3>Capture the lead</h3><p>To see their full result, visitors leave their email and project details. It goes straight to your sales team.</p></li>
+    <li><h3>Book the visit</h3><p>Your team follows up with a quote or an on-site assessment, already knowing what the customer wants.</p></li>
+    <li><h3>Drive traffic</h3><p>Digital ads send the right homeowners to the tool, and you see the cost of every lead in plain numbers.</p></li>
+  </ol>
 </div></section>
 
 <section class="band on-paper"><div class="wrap">

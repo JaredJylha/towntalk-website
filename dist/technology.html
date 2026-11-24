@@ -35,57 +35,116 @@
 <section class="band band-dark" id="demo"><div class="wrap">
   <div class="section-head">
     <div class="eyebrow">Try it</div>
-    <h2>Rebate finder demo.</h2>
-    <p>Set up for an example insulation company. Homeowners answer three quick questions, see the rebates they may qualify for, and request their full breakdown and an assessment.</p>
+    <h2>Insulation rebate calculator.</h2>
+    <p>Built for insulation companies and tied to Ontario's Home Renovation Savings program. Homeowners see what they could get back in about two minutes, then ask for a quote. This is how it would look on your website, with your logo.</p>
   </div>
-  <div class="tool" id="rebate-finder">
-    <div class="tool-head"><span>Home energy rebate finder</span><span class="tag">Demo</span></div>
-    <div class="tool-grid">
-      <form class="tool-questions rf-questions" onsubmit="return false">
-        <fieldset><legend>1. What kind of home?</legend><div class="opts">
-          <label class="opt"><input type="radio" name="rf-home" value="detached"><span>Detached house</span></label>
-          <label class="opt"><input type="radio" name="rf-home" value="attached"><span>Semi or townhouse</span></label>
-          <label class="opt"><input type="radio" name="rf-home" value="mobile"><span>Mobile or modular</span></label>
-        </div></fieldset>
-        <fieldset><legend>2. How is it heated?</legend><div class="opts">
-          <label class="opt"><input type="radio" name="rf-heat" value="gas"><span>Natural gas</span></label>
-          <label class="opt"><input type="radio" name="rf-heat" value="electric"><span>Electric</span></label>
-          <label class="opt"><input type="radio" name="rf-heat" value="oil"><span>Oil or propane</span></label>
-          <label class="opt"><input type="radio" name="rf-heat" value="heatpump"><span>Heat pump</span></label>
-        </div></fieldset>
-        <fieldset><legend>3. What are you thinking of upgrading? <small>Pick any</small></legend><div class="opts">
-          <label class="opt"><input type="checkbox" name="rf-up" value="attic"><span>Attic insulation</span></label>
-          <label class="opt"><input type="checkbox" name="rf-up" value="wall"><span>Wall insulation</span></label>
-          <label class="opt"><input type="checkbox" name="rf-up" value="basement"><span>Basement insulation</span></label>
-          <label class="opt"><input type="checkbox" name="rf-up" value="air"><span>Air sealing</span></label>
-          <label class="opt"><input type="checkbox" name="rf-up" value="windows"><span>Windows and doors</span></label>
-          <label class="opt"><input type="checkbox" name="rf-up" value="heatpump"><span>Heat pump</span></label>
-        </div></fieldset>
+  <div class="rb" id="rebate-finder">
+    <div class="rb-top">
+      <div class="rb-logo">Your logo here</div>
+      <span class="rb-phone">Your phone number</span>
+    </div>
+    <div class="rb-intro">
+      <h3>See what Ontario will pay you to insulate.</h3>
+      <p>Answer a few questions about your home and the upgrades you're considering. You'll get an estimate under the Home Renovation Savings program in about two minutes.</p>
+    </div>
+    <div class="rb-grid">
+      <form class="rb-main" onsubmit="return false">
+        <section class="rb-step">
+          <h4><span>1</span> Your home</h4>
+          <p class="rb-hint">The program has a few basic eligibility rules.</p>
+          <div class="rb-q"><span class="rb-label">Postal code</span><input type="text" id="rb-postal" class="rb-input rb-small" maxlength="7" placeholder="L0K 1A0" autocomplete="postal-code"></div>
+          <div class="rb-q"><span class="rb-label">Do you own the home?</span><div class="opts"><label class="opt"><input type="radio" name="rb-own" value="owner" checked><span>Yes, I live here</span></label><label class="opt"><input type="radio" name="rb-own" value="landlord"><span>Yes, it's a rental I own</span></label><label class="opt"><input type="radio" name="rb-own" value="renter"><span>No, I rent</span></label></div></div>
+          <div class="rb-q"><span class="rb-label">Type of home</span><div class="opts"><label class="opt"><input type="radio" name="rb-htype" value="detached" checked><span>Detached</span></label><label class="opt"><input type="radio" name="rb-htype" value="semi"><span>Semi-detached</span></label><label class="opt"><input type="radio" name="rb-htype" value="row"><span>Row or townhouse</span></label><label class="opt"><input type="radio" name="rb-htype" value="mobile"><span>Mobile home on foundation</span></label><label class="opt"><input type="radio" name="rb-htype" value="stacked"><span>Stacked townhouse or condo</span></label></div></div>
+          <div class="rb-q"><span class="rb-label">How is it mainly heated?</span><div class="opts"><label class="opt"><input type="radio" name="rb-heat" value="gas" checked><span>Natural gas (Enbridge)</span></label><label class="opt"><input type="radio" name="rb-heat" value="gas-other"><span>Natural gas (other utility)</span></label><label class="opt"><input type="radio" name="rb-heat" value="electric"><span>Electricity</span></label><label class="opt"><input type="radio" name="rb-heat" value="oil"><span>Oil</span></label><label class="opt"><input type="radio" name="rb-heat" value="propane"><span>Propane</span></label><label class="opt"><input type="radio" name="rb-heat" value="wood"><span>Wood</span></label></div></div>
+        </section>
+        <section class="rb-step">
+          <h4><span>2</span> Upgrades you're considering</h4>
+          <p class="rb-hint">Pick everything you might do. Two or more upgrades usually unlock a bigger rebate.</p>
+          <div class="rb-upg" data-upg="attic">
+            <label class="rb-upg-head"><input type="checkbox" value="attic"><span><strong>Attic insulation</strong><em>Top up the attic floor to R-50 or higher</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Roof style</span><div class="opts"><label class="opt"><input type="radio" name="rb-atticType" value="standard" checked><span>Standard attic</span></label><label class="opt"><input type="radio" name="rb-atticType" value="cathedral"><span>Cathedral ceiling or flat roof</span></label></div></div><div class="rb-q" id="rb-atticLevelQ"><span class="rb-label">How much insulation is there now?</span><div class="opts"><label class="opt"><input type="radio" name="rb-atticNow" value="r12" checked><span>Little or none (R-12 or less, under 4&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="r25"><span>Some (R-12 to R-25, 4&ndash;8&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="r35"><span>Moderate (R-25 to R-35, 8&ndash;11&quot;)</span></label><label class="opt"><input type="radio" name="rb-atticNow" value="full"><span>Plenty (over R-35)</span></label></div></div><div class="rb-q"><span class="rb-label">Rough quote for the attic work (optional)</span><input type="number" id="rb-atticCost" class="rb-input rb-small" min="0" step="100" placeholder="$ before tax"></div></div>
+          </div>
+          <div class="rb-upg" data-upg="walls">
+            <label class="rb-upg-head"><input type="checkbox" value="walls"><span><strong>Exterior wall insulation</strong><em>Blown-in or exterior board, covering all exterior walls</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Insulation value added</span><div class="opts"><label class="opt"><input type="radio" name="rb-walls" value="low" checked><span>R-7.5 to R-12</span></label><label class="opt"><input type="radio" name="rb-walls" value="mid"><span>R-12 to R-20</span></label><label class="opt"><input type="radio" name="rb-walls" value="high"><span>Over R-20</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="basement">
+            <label class="rb-upg-head"><input type="checkbox" value="basement"><span><strong>Basement walls</strong><em>Insulating the full basement wall area</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Insulation value added</span><div class="opts"><label class="opt"><input type="radio" name="rb-basement" value="mid" checked><span>R-10 to R-22</span></label><label class="opt"><input type="radio" name="rb-basement" value="high"><span>Over R-22</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="crawl">
+            <label class="rb-upg-head"><input type="checkbox" value="crawl"><span><strong>Crawl space</strong><em>Insulating the crawl space walls or ceiling</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">What's being insulated</span><div class="opts"><label class="opt"><input type="radio" name="rb-crawl" value="wallMid" checked><span>Walls, R-10 to R-22</span></label><label class="opt"><input type="radio" name="rb-crawl" value="wallHigh"><span>Walls, over R-22</span></label><label class="opt"><input type="radio" name="rb-crawl" value="ceiling"><span>Ceiling, over R-24</span></label></div></div></div>
+          </div>
+          <div class="rb-upg" data-upg="header">
+            <label class="rb-upg-head"><input type="checkbox" value="header"><span><strong>Rim joists / foundation header</strong><em>Only counts alongside basement or crawl space wall work</em></span></label>
+            
+          </div>
+          <div class="rb-upg" data-upg="slab">
+            <label class="rb-upg-head"><input type="checkbox" value="slab"><span><strong>Basement floor slab</strong><em>Insulating at least half the slab</em></span></label>
+            
+          </div>
+          <div class="rb-upg" data-upg="windows">
+            <label class="rb-upg-head"><input type="checkbox" value="windows"><span><strong>ENERGY STAR windows and doors</strong><em>Full-frame replacements, $100 per opening</em></span></label>
+            <div class="rb-upg-body"><div class="rb-q"><span class="rb-label">Number of openings</span><input type="number" id="rb-windowCount" class="rb-input rb-small" min="1" max="60" value="8"></div></div>
+          </div>
+          <div class="rb-upg" data-upg="air">
+            <label class="rb-upg-head"><input type="checkbox" value="air"><span><strong>Air sealing</strong><em>Paid if your home meets the airtightness target after the work</em></span></label>
+            
+          </div>
+        </section>
       </form>
-      <div class="tool-out">
-        <div class="rf-result" aria-live="polite"></div>
-        <form class="form tool-gate rf-gate" novalidate hidden>
-          <h3>Get your full rebate breakdown</h3>
-          <p>We'll email the amounts for each program and call to book a free home assessment.</p>
-          <div class="field-row">
-            <div class="field"><label for="rf-name">Name</label><input id="rf-name" name="rf-name" autocomplete="name"></div>
-            <div class="field"><label for="rf-email">Email</label><input id="rf-email" name="rf-email" type="email" autocomplete="email"></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label for="rf-phone">Phone</label><input id="rf-phone" name="rf-phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="rf-postal">Postal code</label><input id="rf-postal" name="rf-postal" autocomplete="postal-code"></div>
-          </div>
-          <label class="check"><input type="checkbox" name="rf-book" checked><span>Yes, book my free on-site assessment</span></label>
-          <div class="btn-row"><button class="btn btn-solid" type="submit">Show my rebates</button></div>
-          <p class="form-status" hidden></p>
-        </form>
-      </div>
+      <aside class="rb-panel" aria-live="polite">
+        <div class="rb-house" aria-hidden="true">
+          <svg viewBox="0 0 320 290">
+            <defs><pattern id="rb-batt" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" class="rb-batt-bg"/><path d="M0 5 Q2.5 0 5 5 T10 5" class="rb-batt-line"/></pattern></defs>
+            <rect x="0" y="204" width="320" height="86" class="rb-ground"/>
+            <polygon class="rb-zone" data-z="attic" points="66,104 160,44 254,104"/>
+            <rect class="rb-zone" data-z="walls" x="60" y="108" width="12" height="92"/>
+            <rect class="rb-zone" data-z="walls" x="248" y="108" width="12" height="92"/>
+            <rect class="rb-zone" data-z="windows" x="98" y="132" width="30" height="36"/>
+            <rect class="rb-zone" data-z="windows" x="192" y="132" width="30" height="36"/>
+            <rect class="rb-zone" data-z="header" x="72" y="198" width="176" height="8"/>
+            <rect class="rb-zone" data-z="basement" x="60" y="206" width="12" height="62"/>
+            <rect class="rb-zone" data-z="basement" x="248" y="206" width="12" height="62"/>
+            <rect class="rb-zone" data-z="slab" x="72" y="262" width="176" height="6"/>
+            <polyline class="rb-shell" points="40,110 160,30 280,110"/>
+            <rect class="rb-shell" x="60" y="108" width="200" height="160"/>
+            <line class="rb-shell" x1="60" y1="206" x2="260" y2="206"/>
+            <line x1="10" y1="204" x2="310" y2="204" class="rb-gline"/>
+          </svg>
+        </div>
+        <div class="rb-result">
+          <p class="rb-total-label">Estimated rebate</p>
+          <div class="rb-total" id="rb-total">$0</div>
+          <p class="rb-path" id="rb-path">Choose an upgrade to see your estimate.</p>
+          <div id="rb-notes"></div>
+          <ul class="rb-lines" id="rb-lines"></ul>
+          <button class="rb-btn" type="button" id="rb-quoteBtn" disabled>Get my free quote</button>
+          <form class="rb-lead" id="rb-lead" novalidate hidden>
+            <div class="rb-row"><label for="rb-lname">Name</label><input class="rb-input" type="text" id="rb-lname" autocomplete="name"></div>
+            <div class="rb-row"><label for="rb-lemail">Email</label><input class="rb-input" type="email" id="rb-lemail" autocomplete="email"></div>
+            <div class="rb-row"><label for="rb-lphone">Phone</label><input class="rb-input" type="tel" id="rb-lphone" autocomplete="tel"></div>
+            <label class="rb-consent"><input type="checkbox" id="rb-lconsent"> I agree to be contacted about my quote. I can unsubscribe anytime.</label>
+            <p class="rb-note rb-stop" id="rb-leadErr" hidden></p>
+            <button class="rb-btn" type="submit">Request my quote</button>
+          </form>
+          <div class="rb-sent" id="rb-sent" hidden><strong>Request sent</strong><span>Demo mode: nothing was sent. On your site, the lead below goes straight to your inbox or CRM.</span></div>
+          <p class="rb-fine" id="rb-fine"></p>
+        </div>
+      </aside>
     </div>
     <div class="rf-lead" hidden>
-      <div class="lead-head"><span>What the business receives</span><span class="tag">New lead</span></div>
+      <div class="lead-head"><span>What your sales team receives</span><span class="tag">New lead</span></div>
       <table><tbody></tbody></table>
-      <p class="ledger-note">In a live version this lands in the company's inbox or CRM within seconds, and nothing is sent from this demo. Rebate amounts here are example figures; your version is built on the current programs in your area.</p>
     </div>
+  </div>
+  <div class="offer">
+    <div>
+      <h3>Your own version, built once.</h3>
+      <p>One-time fee, no subscription. Book a consultation and we'll build the tool you need, work with your web developer to install it, and brand it with your logo and colours.</p>
+    </div>
+    <div class="btn-row"><a class="btn btn-solid" href="contact.html">Book a consultation</a></div>
   </div>
 </div></section>
 
@@ -106,7 +165,7 @@
   <div class="section-head">
     <div class="eyebrow">What we build</div>
     <h2>Tools your customers will actually use.</h2>
-    <p>Each one is built for your business, matches your brand, and works on any website. One-time build fee.</p>
+    <p>Each one is built for your business, matches your brand, and works on any website. One-time fee, no subscription.</p>
   </div>
   <div class="services">
     <div class="service"><h3>Rebate finders</h3><p>Show homeowners the rebates and financing they may qualify for, then collect their details for a quote or assessment.</p></div>

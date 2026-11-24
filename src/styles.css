@@ -347,3 +347,73 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .hero-special { display: grid; gap: 0.6rem; border-left: 2px solid var(--paper); padding-left: 1rem; max-width: 46ch; }
 .hero-special p { color: var(--paper); font-weight: 600; font-size: 1.05rem; }
 .band-night .pillar:hover { background: var(--ink); }
+
+/* ---------- Insulation rebate calculator demo (looks like it sits on a client's site) ---------- */
+.rb { background: var(--paper); color: var(--char); border: 1px solid var(--rule-dark); }
+.rb [hidden] { display: none !important; }
+.rb-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1rem clamp(1.25rem, 3vw, 2rem); border-bottom: 1px solid var(--paper-2); }
+.rb-logo { border: 2px dashed var(--stone); padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-light); }
+.rb-phone { font-size: 0.9rem; color: var(--muted-light); }
+.rb-intro { padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem) 0; display: grid; gap: 0.6rem; }
+.rb-intro h3 { font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 20ch; }
+.rb-intro p { color: var(--muted-light); }
+.rb-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: clamp(1.25rem, 3vw, 2rem); }
+@media (min-width: 960px) { .rb-grid { grid-template-columns: minmax(0, 1fr) 22rem; align-items: start; } .rb-panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 5rem); } }
+.rb-grid > * { min-width: 0; }
+.rb-main { display: grid; gap: 1.25rem; }
+.rb-step { background: #fff; border: 1px solid var(--paper-2); padding: 1.25rem 1.25rem 0.5rem; }
+.rb-step h4 { margin: 0 0 0.25rem; font-family: var(--display); font-weight: 400; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.02em; display: flex; gap: 0.6rem; align-items: baseline; }
+.rb-step h4 span { color: var(--stone); }
+.rb-hint { color: var(--muted-light); font-size: 0.9rem; margin-bottom: 1rem; }
+.rb-q { margin-bottom: 1.1rem; display: grid; gap: 0.5rem; }
+.rb-label { font-weight: 700; font-size: 0.9rem; }
+.rb .opt span { background: #fff; border-color: var(--paper-2); color: var(--char); font-size: 0.9rem; padding: 0.5rem 0.85rem; }
+.rb .opt span:hover { border-color: var(--stone); }
+.rb .opt input:checked + span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.rb-input { font: inherit; width: 100%; padding: 0.65rem 0.8rem; border: 1px solid var(--paper-2); border-bottom: 2px solid var(--stone); background: #fff; color: var(--char); border-radius: 0; }
+.rb-input:focus { outline: none; border-bottom-color: var(--ink); }
+.rb-small { max-width: 11rem; }
+.rb-upg { border-top: 1px solid var(--paper-2); padding: 0.9rem 0; }
+.rb-upg:first-of-type { border-top: 0; }
+.rb-upg-head { display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer; }
+.rb-upg-head input { width: 1.15rem; height: 1.15rem; margin-top: 0.2rem; accent-color: var(--ink); flex: none; }
+.rb-upg-head strong { display: block; }
+.rb-upg-head em { font-style: normal; color: var(--muted-light); font-size: 0.85rem; }
+.rb-upg-body { margin: 0.9rem 0 0 1.9rem; display: none; }
+.rb-upg.open .rb-upg-body { display: block; }
+.rb-panel { background: #fff; border: 1px solid var(--paper-2); }
+.rb-house { background: var(--paper); padding: 1rem 1rem 0; }
+.rb-house svg { width: 100%; height: auto; display: block; }
+.rb-ground { fill: var(--paper-2); }
+.rb-gline { stroke: var(--stone); stroke-width: 1; }
+.rb-batt-bg { fill: var(--char); opacity: 0.18; }
+.rb-batt-line { fill: none; stroke: var(--char); stroke-width: 1.4; }
+.rb-zone { fill: transparent; stroke: var(--stone); stroke-width: 1.2; stroke-dasharray: 3 3; transition: fill 0.35s; }
+.rb-zone.on { fill: url(#rb-batt); stroke: var(--ink); stroke-dasharray: none; }
+.rb-shell { fill: none; stroke: var(--ink); stroke-width: 2; }
+.rb-result { padding: 1.1rem 1.25rem 1.25rem; display: grid; gap: 0.5rem; }
+.rb-total-label { color: var(--muted-light); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.rb-total { font-family: var(--display); font-size: 3.5rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.rb-path { color: var(--muted-light); font-size: 0.9rem; }
+.rb-note { font-size: 0.85rem; padding: 0.6rem 0.75rem; border-left: 3px solid var(--ink); background: var(--paper); }
+.rb-note.rb-stop { border-left-color: #8a2b1d; background: #f6e7e2; }
+.rb-lines { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+.rb-lines li { display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.4rem 0; border-bottom: 1px dashed var(--paper-2); }
+.rb-lines li span:last-child { font-variant-numeric: tabular-nums; font-weight: 700; }
+.rb-btn { display: block; width: 100%; padding: 0.95rem; border: 2px solid var(--ink); background: var(--ink); color: var(--paper); font: inherit; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; margin-top: 0.5rem; }
+.rb-btn:hover:not(:disabled) { background: transparent; color: var(--ink); }
+.rb-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.rb-lead { display: grid; gap: 0.6rem; margin-top: 0.5rem; }
+.rb-row { display: grid; gap: 0.3rem; }
+.rb-row label { font-size: 0.8rem; font-weight: 700; }
+.rb-consent { display: flex; gap: 0.5rem; font-size: 0.8rem; color: var(--muted-light); align-items: flex-start; }
+.rb-consent input { accent-color: var(--ink); margin-top: 0.2rem; }
+.rb-sent { text-align: center; padding: 0.5rem 0; font-size: 0.9rem; color: var(--muted-light); }
+.rb-sent strong { display: block; font-size: 1.1rem; color: var(--char); }
+.rb-fine { font-size: 0.75rem; color: var(--muted-light); margin-top: 0.5rem; }
+.rb .rf-lead { border-top: 1px solid var(--paper-2); }
+
+.offer { margin-top: 2rem; display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: center; border: 1px solid var(--rule-dark); padding: clamp(1.25rem, 3vw, 2rem); }
+@media (min-width: 820px) { .offer { grid-template-columns: 1fr auto; } }
+.offer h3 { font-size: var(--step-2); }
+.offer p { color: var(--muted-dark); margin-top: 0.5rem; }

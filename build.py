@@ -22,18 +22,23 @@ PAGES = [
     ("advertising", "advertising.html", "Advertising"),
     ("about", "about.html", "About"),
     ("contact", "contact.html", "Contact"),
+    ("privacy", "privacy.html", "Privacy"),
 ]
+NAV = ["technology", "advertising", "about", "contact"]
 DESC = "Town Talk Marketing Solutions builds lead-generation tools for home improvement websites and gives independent advice on advertising: contract reviews, media plans and digital campaigns."
 
 # Contact form and estimator delivery: Web3Forms (https://web3forms.com) emails each submission to
 # the address the access key was created for (jared@towntalk.ca). The key is public by design.
 WEB3FORMS_KEY = "fa269272-cd0e-4498-98c7-e3fd4660d626"
+# Google reCAPTCHA v3 site key (public). Leave empty until reCAPTCHA is set up in Web3Forms;
+# once set, every form sends a fresh token as recaptcha_response.
+RECAPTCHA_SITE_KEY = ""
 
 
 def header(cur):
     links = "".join(
         f'<a href="{{{{{k}}}}}"{" aria-current=\"page\"" if k == cur else ""}>{label}</a>'
-        for k, _, label in PAGES[1:]
+        for k, _, label in PAGES if k in NAV
     )
     return f'''<header class="site-header"><div class="wrap">
   <a class="brand" href="{{{{home}}}}" aria-label="Town Talk Marketing Solutions, home">
@@ -49,9 +54,9 @@ FOOTER = '''<footer class="site-footer"><div class="wrap">
     <img src="assets/logo-light.png" alt="Town Talk Marketing Solutions" width="290" height="163">
     <p>Lead-generation tools and independent advertising advice for home improvement businesses. Plain answers and a straight account of where the money goes.</p>
   </div>
-  <div><h4>Site</h4><ul><li><a href="{{home}}">Home</a></li><li><a href="{{technology}}">Technology</a></li><li><a href="{{advertising}}">Advertising</a></li><li><a href="{{about}}">About</a></li><li><a href="{{contact}}">Contact</a></li></ul></div>
+  <div><h4>Site</h4><ul><li><a href="{{home}}">Home</a></li><li><a href="{{technology}}">Technology</a></li><li><a href="{{advertising}}">Advertising</a></li><li><a href="{{about}}">About</a></li><li><a href="{{contact}}">Contact</a></li><li><a href="{{privacy}}">Privacy</a></li></ul></div>
   <div><h4>Get in touch</h4><ul><li><a href="{{contact}}">Book a free call</a></li><li><a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a></li><li><a href="tel:+12893384051">(289) 338-4051</a></li><li>Muskoka and Brock, Ontario</li></ul></div>
-  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions</span><span>Independent marketing consultancy</span></div>
+  <div class="legal"><span>&copy; 2026 Town Talk Marketing Solutions &middot; <a href="{{privacy}}">Privacy policy</a></span><span>Independent marketing consultancy</span></div>
 </div></footer>'''
 
 
@@ -288,6 +293,7 @@ TECHNOLOGY = '''<section class="page-hero">
     </div>
     <div class="btn-row"><a class="btn btn-solid" href="{{contact}}">Book a consultation</a></div>
   </div>
+  <p class="disclaimer disclaimer-dark">Rebate amounts in this demo are estimates based on publicly posted Home Renovation Savings program details as of November 2026. They aren't a guarantee of funding. Program rules and amounts can change or end without notice, and the program makes all final eligibility and payment decisions. Town Talk isn't affiliated with Enbridge Gas, Save on Energy or the Government of Ontario.</p>
 </div></section>
 
 <section class="band band-night"><div class="wrap">
@@ -427,6 +433,7 @@ ADVERTISING = '''<section class="page-hero">
     <div class="service"><h3>Digital ad training</h3><p>Rather run your own ads? We'll teach you or your team to do it well, one-on-one or in a group.</p>
       <ul><li>Google Ads and Meta ads, step by step</li><li>Setting budgets and reading the results</li><li>Campaign strategy and optimization</li><li>Hands-on, using your own accounts</li></ul></div>
   </div>
+  <p class="disclaimer">Contract and agency reviews are a commercial review of costs, terms and value, not legal advice. Where a contract needs legal interpretation, we'll recommend you speak with a lawyer. We don't guarantee specific results or return on ad spend.</p>
 </div></section>
 
 <section class="band band-night"><div class="wrap split">
@@ -588,7 +595,62 @@ CONTACT = '''<section class="page-hero">
 </div></section>
 '''
 
-BODIES = {"home": HOME, "technology": TECHNOLOGY, "advertising": ADVERTISING, "about": ABOUT, "contact": CONTACT}
+PRIVACY = '''<section class="page-hero">
+  <img class="ghost-mark" src="assets/emblem-light.png" alt="" width="256" height="224">
+  <div class="wrap">
+    <div class="eyebrow">Privacy</div>
+    <h1>Privacy and disclaimers.</h1>
+    <p>What we collect through this website, why, what you can ask us to do with it, and the limits of our estimates. Last updated November 23, 2026.</p>
+  </div>
+</section>
+
+<section class="band on-paper"><div class="wrap prose">
+  <h2>Who we are</h2>
+  <p>Town Talk Marketing Solutions (&ldquo;Town Talk&rdquo;, &ldquo;we&rdquo;) is an independent marketing consultancy with offices in Muskoka and Brock, Ontario. We handle personal information in line with Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA). Jared Jylha is responsible for privacy at Town Talk and can be reached at <a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a> or <a href="tel:+12893384051">(289) 338-4051</a>.</p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Contact form.</strong> Your name, email, and anything else you choose to give us: business name, phone number, the service you're interested in, your monthly ad spend range and your message.</li>
+    <li><strong>Ad budget estimator.</strong> If you ask to see your channel mix, your name, email and business name, plus the answers you gave and the budget and channel mix the tool showed you.</li>
+    <li><strong>Rebate calculator demo.</strong> Nothing. The demo on our Technology page runs in your browser and does not send the details you enter anywhere.</li>
+    <li><strong>Technical information.</strong> Like most websites, our hosting and security providers receive your IP address, browser type and the pages you request so they can deliver the site and block abuse.</li>
+  </ul>
+
+  <h2>How we use it</h2>
+  <p>We use the information you send us to reply to you, prepare for a call you've booked, and follow up about the services you asked about. We don't sell or rent personal information, and we don't add you to a mailing list unless you ask us to.</p>
+
+  <h2>Consent</h2>
+  <p>By sending us a form, you consent to us using your information for the purposes above. You can withdraw your consent at any time by emailing us, and we'll stop contacting you and delete your information unless we need to keep it by law.</p>
+
+  <h2>Service providers we use</h2>
+  <p>A few companies help us run this site. They may process information outside Canada, including in the United States, where it can be subject to local laws.</p>
+  <ul>
+    <li><strong>Web3Forms</strong> delivers form submissions to our email inbox.</li>
+    <li><strong>Google reCAPTCHA</strong> protects our forms from spam. It collects information about your device and how you use the page, and may set cookies. Its use is subject to Google's <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" rel="noopener">Terms of Service</a>.</li>
+    <li><strong>Google Fonts</strong> supplies the fonts on this site, so your browser requests them from Google.</li>
+    <li><strong>Cloudflare</strong> hosts the website and protects it from attacks.</li>
+  </ul>
+
+  <h2>Cookies and analytics</h2>
+  <p>This site does not currently use analytics or advertising cookies. Google reCAPTCHA may set its own cookies to tell people from bots. If we add analytics or advertising tools in the future, we'll update this page first.</p>
+
+  <h2>How long we keep it</h2>
+  <p>We keep your information only as long as we need it for the purposes above, or as required by law, then delete it.</p>
+
+  <h2>Your rights</h2>
+  <p>You can ask to see the personal information we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a> and we'll respond within 30 days. If you're not satisfied with our answer, you can contact the <a href="https://www.priv.gc.ca" rel="noopener">Office of the Privacy Commissioner of Canada</a>.</p>
+
+  <h2>Disclaimers</h2>
+  <p><strong>Rebate estimates.</strong> Rebate amounts shown by our calculators are estimates based on publicly posted program details. They aren't a guarantee of funding. Programs can change or end without notice, and the program administrator makes all final decisions. Town Talk isn't affiliated with Enbridge Gas, Save on Energy or the Government of Ontario.</p>
+  <p><strong>Not legal advice.</strong> Our reviews of advertising contracts and agency agreements are commercial advice about costs, terms and value. They aren't legal advice. For legal interpretation of a contract, please speak with a qualified lawyer.</p>
+  <p><strong>Estimates and results.</strong> Budget ranges, channel mixes and other figures on this site are general guidance, not a promise of specific sales, leads or return on investment.</p>
+
+  <h2>Changes</h2>
+  <p>We'll post any changes to this policy on this page and update the date at the top.</p>
+</div></section>
+'''
+
+BODIES = {"home": HOME, "technology": TECHNOLOGY, "advertising": ADVERTISING, "about": ABOUT, "contact": CONTACT, "privacy": PRIVACY}
 
 FORM_JS_TEMPLATE = '''<script>
 (function(){
@@ -609,7 +671,8 @@ FORM_JS_TEMPLATE = '''<script>
     data.from_name='Town Talk website';
     data.replyto=m.value.trim();
     btn.disabled=true; say('Sending...');
-    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+    window.ttCaptcha().then(function(t){ if(t) data.recaptcha_response=t;
+      return fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}); })
       .then(function(r){return r.json();})
       .then(function(j){
         if(j.success){var first=n.value.trim().split(' ')[0];f.reset();say('Thanks, '+first+'. Your message is on its way, and Jared will be in touch soon.');}
@@ -622,6 +685,25 @@ FORM_JS_TEMPLATE = '''<script>
 </script>'''
 FORM_JS = FORM_JS_TEMPLATE.replace("__WEB3FORMS_KEY__", WEB3FORMS_KEY)
 PREVIEW_FORM_JS = FORM_JS_TEMPLATE.replace("__WEB3FORMS_KEY__", "")  # preview can't reach outside hosts
+
+
+def captcha_js(site_key):
+    """window.ttCaptcha() resolves to a fresh reCAPTCHA v3 token, or '' when reCAPTCHA isn't set up."""
+    loader = f'<script src="https://www.google.com/recaptcha/api.js?render={site_key}" async defer></script>' if site_key else ""
+    return loader + """<script>
+window.ttCaptcha=function(){var K="%s";
+  if(!K||!window.grecaptcha) return Promise.resolve('');
+  return new Promise(function(res){grecaptcha.ready(function(){grecaptcha.execute(K,{action:'submit'}).then(res,function(){res('');});});});
+};
+</script>""" % site_key
+
+
+SECURITY_HEADERS = """/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+"""
 
 PAGE_SCRIPTS = {"technology": ["rebate-finder.js"], "advertising": ["ad-estimator.js"]}
 
@@ -646,6 +728,7 @@ def build_dist():
     for js in SCRIPTS:
         shutil.copy(SRC / js, out / js)
     (out / "_redirects").write_text(REDIRECTS)
+    (out / "_headers").write_text(SECURITY_HEADERS)
     for k, file, label in PAGES:
         title = "Town Talk Marketing Solutions" if k == "home" else f"{label} | Town Talk Marketing Solutions"
         scripts = "".join(f'<script src="{js}" defer></script>' for js in PAGE_SCRIPTS.get(k, []))
@@ -670,6 +753,7 @@ def build_dist():
 {BODIES[k]}
 </main>
 {FOOTER}
+{captcha_js(RECAPTCHA_SITE_KEY) if k in ("contact", "advertising") else ""}
 {FORM_JS if k == "contact" else ""}
 </body>
 </html>
@@ -711,6 +795,7 @@ def build_preview():
 </style>
 {"".join(sections)}
 {FOOTER}
+{captcha_js("")}
 {PREVIEW_FORM_JS}
 {widget_js}
 {router}

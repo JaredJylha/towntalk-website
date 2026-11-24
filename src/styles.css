@@ -417,3 +417,15 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @media (min-width: 820px) { .offer { grid-template-columns: 1fr auto; } }
 .offer h3 { font-size: var(--step-2); }
 .offer p { color: var(--muted-dark); margin-top: 0.5rem; }
+
+/* Long-form text (privacy policy) */
+.prose { display: grid; gap: 1rem; max-width: 46rem; }
+.prose h2 { font-size: var(--step-2); margin-top: 1.5rem; }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { color: var(--muted-light); }
+.prose strong { color: var(--char); }
+.prose ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.6rem; }
+.prose a { text-decoration: underline; text-underline-offset: 2px; }
+.site-footer .legal a { text-decoration: underline; text-underline-offset: 2px; }
+.disclaimer { margin-top: 2rem; font-size: 0.85rem; color: var(--muted-light); max-width: 70ch; border-left: 2px solid var(--stone); padding-left: 0.9rem; }
+.disclaimer-dark { color: var(--muted-dark); }

@@ -403,12 +403,13 @@ ADVERTISING = '''<section class="page-hero">
         <form class="form tool-gate ae-gate" novalidate hidden>
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <h3>See your channel mix</h3>
-          <p>Where the budget should go, by channel. Free, and Jared will follow up personally, not a mailing list.</p>
+          <p>Where the budget should go, by channel. Free, and Jared will follow up personally.</p>
           <div class="field-row">
             <div class="field"><label for="ae-name">Name</label><input id="ae-name" name="ae-name" autocomplete="name"></div>
             <div class="field"><label for="ae-email">Email</label><input id="ae-email" name="ae-email" type="email" autocomplete="email"></div>
           </div>
           <div class="field"><label for="ae-business">Business name</label><input id="ae-business" name="ae-business" autocomplete="organization"></div>
+          <label class="check"><input type="checkbox" name="ae-updates"><span>Send me occasional news and greetings from Town Talk. I can unsubscribe anytime.</span></label>
           <div class="btn-row"><button class="btn btn-solid" type="submit">Show my channel mix</button></div>
           <p class="form-status" hidden></p>
         </form>
@@ -589,6 +590,7 @@ CONTACT = '''<section class="page-hero">
         <select id="cf-spend" name="spend"><option value="">Choose a range</option><option>Under $1,000</option><option>$1,000 to $5,000</option><option>$5,000 to $15,000</option><option>Over $15,000</option><option>Not sure</option></select></div>
     </div>
     <div class="field"><label for="cf-msg">What would you like help with?</label><textarea id="cf-msg" name="message"></textarea></div>
+    <label class="check"><input type="checkbox" name="email_updates" value="Yes"><span>Send me occasional news and greetings from Town Talk. I can unsubscribe anytime.</span></label>
     <div class="btn-row"><button class="btn btn-solid" type="submit">Send request</button></div>
     <p class="form-status" id="cf-status" hidden></p>
   </form>
@@ -617,7 +619,15 @@ PRIVACY = '''<section class="page-hero">
   </ul>
 
   <h2>How we use it</h2>
-  <p>We use the information you send us to reply to you, prepare for a call you've booked, and follow up about the services you asked about. We don't sell or rent personal information, and we don't add you to a mailing list unless you ask us to.</p>
+  <p>We use the information you send us to reply to you, prepare for a call you've booked, and follow up about the services you asked about. We don't sell or rent personal information.</p>
+
+  <h2>Emails from us</h2>
+  <p>We may also send you occasional emails, such as news about our services and seasonal or birthday greetings. We follow Canada's Anti-Spam Legislation (CASL):</p>
+  <ul>
+    <li>If you tick the box to hear from us, we'll email you until you unsubscribe.</li>
+    <li>If you only sent us an enquiry, we'll email you for up to 6 months after it. If you become a client, we'll email you for up to 2 years after your last purchase or contract with us, unless you tell us you want to keep hearing from us.</li>
+    <li>Every email includes our contact information and a simple way to unsubscribe. We'll act on an unsubscribe request within 10 business days.</li>
+  </ul>
 
   <h2>Consent</h2>
   <p>By sending us a form, you consent to us using your information for the purposes above. You can withdraw your consent at any time by emailing us, and we'll stop contacting you and delete your information unless we need to keep it by law.</p>
@@ -635,7 +645,7 @@ PRIVACY = '''<section class="page-hero">
   <p>This site does not currently use analytics or advertising cookies. Google reCAPTCHA may set its own cookies to tell people from bots. If we add analytics or advertising tools in the future, we'll update this page first.</p>
 
   <h2>How long we keep it</h2>
-  <p>We keep your information only as long as we need it for the purposes above, or as required by law, then delete it.</p>
+  <p>We keep your contact details for as long as we're allowed to contact you under CASL, as described above, or as long as we need them to serve you as a client. When that ends, or when you ask us to, we delete them unless the law requires us to keep them.</p>
 
   <h2>Your rights</h2>
   <p>You can ask to see the personal information we hold about you, ask us to correct it, or ask us to delete it. Email <a href="mailto:jared@towntalk.ca">jared@towntalk.ca</a> and we'll respond within 30 days. If you're not satisfied with our answer, you can contact the <a href="https://www.priv.gc.ca" rel="noopener">Office of the Privacy Commissioner of Canada</a>.</p>

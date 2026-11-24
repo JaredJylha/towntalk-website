@@ -112,6 +112,7 @@
       market: MARKET[a.market][1], average_job: TICKET[a.ticket],
       budget_shown: money(state.low) + ' to ' + money(state.high) + ' per month',
       channel_mix_shown: mixText,
+      email_updates: f['ae-updates'].checked ? 'Yes' : 'No',
       source: 'Ad budget estimator, Advertising page'
     };
     btn.disabled = true;

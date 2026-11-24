@@ -74,10 +74,6 @@ HOME = '''<section class="hero">
     <div class="eyebrow">Marketing Solutions</div>
     <h1>Smarter marketing for local business.</h1>
     <p class="lede">Town Talk is an independent consultancy for small and mid-sized businesses. We help you decide where to spend, cut what isn't working, and see what every dollar is doing.</p>
-    <div class="hero-special">
-      <div class="eyebrow">What we specialize in</div>
-      <p>Town Talk builds simple lead-generation tools for your website, then makes sure the advertising that sends people to them is worth what you pay.</p>
-    </div>
     <div class="btn-row"><a class="btn btn-solid" href="{{technology}}#demo">Try the rebate finder</a><a class="btn btn-ghost" href="{{advertising}}#estimator">Estimate your ad budget</a></div>
   </div>
 </section>
@@ -123,7 +119,7 @@ HOME = '''<section class="hero">
   <div class="section-head">
     <div class="eyebrow">What we specialize in</div>
     <h2>Two ways we help.</h2>
-    <p>Start with either one. Most clients end up using both, because one feeds the other.</p>
+    <p>We build simple lead-generation tools for your website, then make sure the advertising that sends people to them is worth what you pay.</p>
   </div>
   <div class="pillars">
     <a class="pillar" href="{{technology}}">
